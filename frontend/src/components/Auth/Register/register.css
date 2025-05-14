@@ -1,0 +1,257 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Page Layout */
+body, html {
+  height: 100%;
+  background: #f4f6f9;
+}
+
+.register-page {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Left Branding Section */
+.register-left {
+  flex: 1 1 100%;
+  background: url("https://images.unsplash.com/photo-1612832020606-6ef5a7be3c8c?auto=format&fit=crop&w=1000&q=80") no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  position: relative;
+}
+
+.register-left::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.register-branding {
+  position: relative;
+  text-align: center;
+  max-width: 400px;
+  padding: 20px;
+  z-index: 1;
+}
+
+.register-branding h1 {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.register-branding p {
+  font-size: 15px;
+  margin-top: 8px;
+}
+
+/* Right Form Section */
+.register-container {
+  flex: 1 1 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to left, #f4f6f9, #ffffff);
+  padding: 2rem;
+}
+
+.register-form {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 32px;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.register-header h1 {
+  font-size: 24px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* Form Groups */
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-input {
+  padding: 12px 14px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  transition: border-color 0.3s ease;
+}
+
+.form-input:focus {
+  border-color: #28a745;
+  outline: none;
+  box-shadow: 0 0 6px rgba(40, 167, 69, 0.2);
+}
+
+/* Password Visibility Toggle */
+.password-show {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  font-size: 13px;
+  color: #555;
+  margin-top: 6px;
+}
+
+.password-show input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  cursor: pointer;
+}
+
+.password-show label {
+  cursor: pointer;
+  font-weight: 500;
+  line-height: 1;
+}
+
+/* Submit Button */
+.register-button {
+  padding: 10px;
+  background-color: #28a745;
+  border: none;
+  color: #fff;
+  font-size: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.register-button:hover {
+  background-color: #218838;
+}
+
+/* Login Link */
+.login-link {
+  text-align: center;
+  font-size: 13px;
+  margin-top: 6px;
+}
+
+.login-link a {
+  color: #28a745;
+  text-decoration: none;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
+
+/* Fade Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Design for larger screens */
+@media (max-width: 1200px) {
+  .register-container {
+    padding: 1.5rem;
+  }
+
+  .register-form {
+    margin-top: 5vh;
+    max-width: 50%;
+  }
+}
+
+/* Tablet Landscape and Smaller Devices */
+@media (max-width: 992px) {
+  .register-container {
+    flex: 1;
+    padding: 1.5rem;
+    justify-content: flex-start;
+  }
+
+  .register-form {
+    max-width: 60%;
+    margin-left: 10vw;
+  }
+
+  .register-left {
+    display: none;
+  }
+}
+
+/* Mobile Portrait */
+@media (max-width: 768px) {
+  .register-page {
+    flex-direction: column;
+  }
+
+  .register-left {
+    display: none;
+  }
+
+  .register-container {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .register-form {
+    max-width: 90%;
+    padding: 28px;
+  }
+
+  .register-header h1 {
+    font-size: 22px;
+  }
+}
+
+/* Mobile Small Devices */
+@media (max-width: 480px) {
+  .register-form {
+    padding: 24px;
+    gap: 16px;
+  }
+
+  .register-header h1 {
+    font-size: 18px;
+  }
+
+  .form-input {
+    font-size: 13px;
+    padding: 10px 12px;
+  }
+
+  .register-button {
+    font-size: 14px;
+    padding: 9px;
+  }
+
+  .password-show {
+    font-size: 12px;
+  }
+
+  .login-link p {
+    font-size: 12px;
+  }
+}
