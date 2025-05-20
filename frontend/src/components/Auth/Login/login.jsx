@@ -8,7 +8,7 @@ function Login() {
     password: "",
   });
 
-  const handleInput = (e) => {
+  const handleInput = (e) => {                                                                              
     let { name, value } = e.target;
     setForm({ ...form, [name]: value });
   };

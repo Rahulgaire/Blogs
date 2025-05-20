@@ -77,9 +77,24 @@ export const updateBlog = async (req, res) => {
 };
 
 export const getByCategory = async (req,res) => {
+  const {id} = req.params;
   try {
-      
+     const newBlogs = await Blog.findById(id)
+     if(newBlogs){
+      res.status(409).json({
+        msg:"No Blog Data Available",
+        newBlogs
+      })
+    }
+    
+    res.status(201).json({
+      msg:"Blog Fetched Successfully",
+      newBlogs
+    })
   } catch (error) {
+    res.status(500).json({
+      msg:"Server Error"
+    })
     
   }
 }
